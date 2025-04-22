@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preloved E-commerce Categories & Filters</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Preloved E-commerce Categories & Filters</h1>
+    
+    <div class="filter-controls">
+      <div class="search">
+        <input type="text" id="search-input" placeholder="Search categories, filters, or keywords...">
+      </div>
+      <div class="view-toggle">
+        <button id="table-view-btn" class="active">Table View</button>
+        <button id="card-view-btn">Card View</button>
+      </div>
+    </div>
+    
+    <div id="table-container">
+      <table class="interactive-table">
+        <thead>
+          <tr>
+            <th>Categories & Filters</th>
+          </tr>
+        </thead>
+        <tbody id="category-table-body">
+          <!-- This will be populated by JavaScript -->
+        </tbody>
+      </table>
+    </div>
+    
+    <div id="card-view" class="card-view">
+      <!-- This will be populated by JavaScript -->
+    </div>
+    
+    <div class="global-filters">
+      <h3>Global Filters (Apply to All Categories)</h3>
+      <ul id="global-filters-list">
+        <!-- This will be populated by JavaScript -->
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/categories-data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

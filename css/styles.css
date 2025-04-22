@@ -1,0 +1,253 @@
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #166d7b;
+  --accent-color: #5eb1bf;
+  --light-color: #f0f6f9;
+  --dark-color: #333;
+  --border-color: #ddd;
+  --hover-color: #e9f2f7;
+  --active-color: #d5e8f4;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.filter-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-controls .search {
+  flex-grow: 1;
+  margin-right: 15px;
+}
+
+.filter-controls input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.filter-controls .view-toggle {
+  display: flex;
+}
+
+.filter-controls .view-toggle button {
+  background: white;
+  border: 1px solid var(--border-color);
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-controls .view-toggle button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.filter-controls .view-toggle button:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.filter-controls .view-toggle button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.interactive-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.interactive-table th {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: left;
+  padding: 12px 15px;
+}
+
+.interactive-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.interactive-table tr:hover {
+  background-color: var(--hover-color);
+}
+
+.interactive-table .category-row {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.interactive-table .subcategory-row,
+.interactive-table .gender-filter-row,
+.interactive-table .filter-row {
+  display: none;
+}
+
+.interactive-table .category-row.expanded + .subcategory-row,
+.interactive-table .category-row.expanded ~ .gender-filter-row,
+.interactive-table .category-row.expanded ~ .filter-row {
+  display: table-row;
+}
+
+.interactive-table .subcategory-row td,
+.interactive-table .gender-filter-row td,
+.interactive-table .filter-row td {
+  padding-left: 30px;
+  background-color: var(--hover-color);
+}
+
+.interactive-table .subcategory-head,
+.interactive-table .gender-filter-head,
+.interactive-table .filter-head {
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.interactive-table ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.interactive-table li {
+  margin-bottom: 5px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.badge.gender {
+  background-color: #ffecb3;
+  color: #856404;
+}
+
+.badge.filter {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.global-filters {
+  background-color: var(--light-color);
+  padding: 15px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.global-filters h3 {
+  margin-top: 0;
+  color: var(--secondary-color);
+}
+
+.global-filters ul {
+  columns: 2;
+}
+
+.global-filters ul li {
+  margin-bottom: 5px;
+}
+
+.card-view {
+  display: none;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px;
+  font-weight: 600;
+  position: relative;
+}
+
+.card-header button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.card-body {
+  padding: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.card-section {
+  margin-bottom: 15px;
+}
+
+.card-section h4 {
+  color: var(--secondary-color);
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.card-section ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.card-section li {
+  margin-bottom: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .filter-controls {
+    flex-direction: column;
+  }
+
+  .filter-controls .search {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .global-filters ul {
+    columns: 1;
+  }
+}
